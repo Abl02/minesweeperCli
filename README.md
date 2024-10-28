@@ -1,0 +1,2 @@
+# minesweeperCli
+simple CLI minesweeper 
