@@ -1,0 +1,54 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Iinclude",
+      "-o",
+      "minesweeper",
+      "src/main.cpp"
+    ],
+    "directory": "/home/abel/Documents/test/demineur",
+    "file": "/home/abel/Documents/test/demineur/src/main.cpp",
+    "output": "/home/abel/Documents/test/demineur/minesweeper"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Iinclude",
+      "-o",
+      "minesweeper",
+      "src/Board.cpp"
+    ],
+    "directory": "/home/abel/Documents/test/demineur",
+    "file": "/home/abel/Documents/test/demineur/src/Board.cpp",
+    "output": "/home/abel/Documents/test/demineur/minesweeper"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Iinclude",
+      "-o",
+      "minesweeper",
+      "src/Game.cpp"
+    ],
+    "directory": "/home/abel/Documents/test/demineur",
+    "file": "/home/abel/Documents/test/demineur/src/Game.cpp",
+    "output": "/home/abel/Documents/test/demineur/minesweeper"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-c",
+      "-Iinclude",
+      "-o",
+      "minesweeper",
+      "src/Renderer.cpp"
+    ],
+    "directory": "/home/abel/Documents/test/demineur",
+    "file": "/home/abel/Documents/test/demineur/src/Renderer.cpp",
+    "output": "/home/abel/Documents/test/demineur/minesweeper"
+  }
+]
