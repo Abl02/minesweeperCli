@@ -1,5 +1,5 @@
 
 int main(void) {
 
-  retun 1;
+  return 1;
 }

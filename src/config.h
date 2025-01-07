@@ -1,7 +1,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-const X_TILES = 8;
-const Y_TILES = 10;
+#define X_TILE 8
+#define Y_TILE 10
 
 #endif
