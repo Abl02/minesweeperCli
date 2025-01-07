@@ -1,12 +1,34 @@
-CXX = gcc
-CXXFLAGS = -Wall
-SRCS = src/main.c src/board.c src/render.c src/config.c
-OBJS = $(SRCS:.cpp=.o)
+TOPDIR  := ./
+SRCDIR  := $(TOPDIR)src/
+OBJDIR  := $(TOPDIR)build/
+BINDIR  := $(TOPDIR)
+NAME    := csweeper
+EXE     := $(BINDIR)$(NAME)
 
-all: minesweeper
+SFILES  := cpp
+OFILES  := o
+CC      := gcc
+CFLAGS 	:= -Wall -Wextra
 
-minesweeper: $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
+SRCS    := $(shell find $(SRCDIR) -name "*.$(SFILES)")
+OBJS    := $(SRCS:.c=.o)
+
+# DEBUG
+#CXXFLAGS  += -g
+CXXFLAGS  += -fsanitize=address
+
+.PHONY: all clean
+
+all: $(EXE)
+
+$(EXE): $(OBJS)
+	$(CC) $^ -o $@
+
+$(OBJDIR)%$(OFILES): $(SRCDIR)%$(SFILES) build
+	$(CC) $(CFLAGS) $< -c -o $@
+
+build:
+	mkdir $(OBJDIR)
 
 clean:
-	rm -f $(OBJS) minesweeper
+	rm -f $(OBJS) $(EXE)
