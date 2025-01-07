@@ -1,6 +1,6 @@
-CXX = g++
-CXXFLAGS = -Wall -std=c++11 -Iinclude
-SRCS = src/main.cpp src/Board.cpp src/Game.cpp src/Renderer.cpp
+CXX = gcc
+CXXFLAGS = -Wall
+SRCS = src/main.c src/board.c src/render.c src/config.c
 OBJS = $(SRCS:.cpp=.o)
 
 all: minesweeper
