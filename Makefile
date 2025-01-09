@@ -5,17 +5,20 @@ BINDIR  := $(TOPDIR)
 NAME    := csweeper
 EXE     := $(BINDIR)$(NAME)
 
-SFILES  := cpp
+SFILES  := c
 OFILES  := o
 CC      := gcc
-CFLAGS 	:= -Wall -Wextra
+CFLAGS 	:= -std=c11 -Wall -Wextra
 
 SRCS    := $(shell find $(SRCDIR) -name "*.$(SFILES)")
-OBJS    := $(SRCS:.c=.o)
+OBJS    := $(OBJDIR)
+
+SRCS := $(wildcard $(SRCDIR)*.c)
+OBJS := $(patsubst $(SRCDIR)%.c, $(OBJDIR)%.o, $(SRCS))
 
 # DEBUG
 #CXXFLAGS  += -g
-CXXFLAGS  += -fsanitize=address
+#CXXFLAGS  += -fsanitize=address
 
 .PHONY: all clean
 
@@ -24,11 +27,11 @@ all: $(EXE)
 $(EXE): $(OBJS)
 	$(CC) $^ -o $@
 
-$(OBJDIR)%$(OFILES): $(SRCDIR)%$(SFILES) build
+$(OBJDIR)%$(OFILES): $(SRCDIR)%$(SFILES) $(OBJDIR)
 	$(CC) $(CFLAGS) $< -c -o $@
 
-build:
-	mkdir $(OBJDIR)
+$(OBJDIR):
+	mkdir -p $@
 
 clean:
-	rm -f $(OBJS) $(EXE)
+	@rm -f $(OBJS) $(EXE)
