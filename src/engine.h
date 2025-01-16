@@ -20,9 +20,9 @@ extern bool mouse;
 void selectRenderType(renderType type);
 
 /*
- * Enable the mouse to be used
+ * toggle mouse
  */
-void enableMouse();
+void toggleMouse();
 
 /*
  * Setup Engine modules, and environment

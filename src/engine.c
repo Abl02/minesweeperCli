@@ -2,7 +2,7 @@
 
 void selectRenderType(renderType type) { RENDER_TYPE = type; }
 
-void enableMouse() { mouse = true; }
+void toggleMouse() { mouse = !mouse; }
 
 void setup() {
   // SETUP ENGINE MODULES AND ENV
@@ -16,4 +16,3 @@ int run() {
   }
   return 0;
 }
-
